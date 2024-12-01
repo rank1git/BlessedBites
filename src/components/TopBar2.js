@@ -19,15 +19,21 @@ const TopBar2 = () => {
 	const handleInputChange = (e) => {
 		setQuery(e.target.value);
 	};
+
 	return (
 		<div className="flex flex-row w-full py-4 fixed top-0 z-50 bg-white space-between items-center">
 			<div className='flex flex-1 justify-center'>
-        <img src='./blessed-bites-high-resolution-logo-transparent.png' alt='logo' className='h-8' />
+        <NavLink to='/'><img src='./blessed-bites-high-resolution-logo-transparent.png' alt='logo' className='h-8' /></NavLink>
       </div>
       <nav className="flex flex-2 gap-5 h-full justify-center ">
-        <Dropdown id='meals' category={'Meals'} isOpen={openDropdown === 'meals'} toggleDropdown={() => toggleDropdown('meals')} />
-				<Dropdown id='cuisines' category={'Cuisines'} isOpen={openDropdown === 'cuisines'} toggleDropdown={() => toggleDropdown('cuisines')} />
-				<Dropdown id='ingredients' category={'Ingredients'} isOpen={openDropdown === 'ingredients'} toggleDropdown={() => toggleDropdown('ingredients')} />
+        <Dropdown 
+          id='meals' 
+          category={'Meals'} 
+          isOpen={openDropdown === 'meals'} 
+          toggleDropdown={() => toggleDropdown('meals')}
+        />
+				<Dropdown category={'Cuisines'} isOpen={openDropdown === 'cuisines'} toggleDropdown={() => toggleDropdown('cuisines')} />
+				<Dropdown category={'Ingredients'} isOpen={openDropdown === 'ingredients'} toggleDropdown={() => toggleDropdown('ingredients')} />
 				<Dropdown category={'Drinks'} />
 			</nav>
 			<div className='flex flex-row flex-1 gap-4 justify-center pr-10 w-full'>

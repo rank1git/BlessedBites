@@ -1,25 +1,12 @@
-import { ToggleLeft } from "lucide-react";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
-const Dropdown = ({ category, isOpen, toggleDropdown }) => {
+const Dropdown = ({ category, isOpen, toggleDropdown, ayoo }) => {
     const dropdownRef = useRef(null);
     let options;
 
     const closeMenu = () => {
       toggleDropdown();
     }
-    
-    useEffect(() => {
-      const handleClickOutside = (e) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        toggleDropdown();
-        }
-      };
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }, [toggleDropdown]);
 
     if(category === 'Meals') {
       options = (

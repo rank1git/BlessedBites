@@ -1,11 +1,20 @@
-import React from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchData } from '../features/recipes/recipeSlice';
 import { NavLink } from 'react-router-dom'
 import fb from '../img/facebook.svg';
 import x from '../img/twitter.svg';
 import ig from '../img/instagram.svg';
 import yt from '../img/youtube.svg';
 
-const Footer = () => {
+const Footer = ({endpoint}) => {
+  const dispatch = useDispatch();
+  const { data, loading, error } = useSelector(state => state.recipes);
+
+  useEffect(() => {
+    dispatch(fetchData(endpoint));
+  }, [dispatch])
+
   return (
     <div>
       <hr />

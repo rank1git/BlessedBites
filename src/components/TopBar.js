@@ -70,7 +70,6 @@ const TopBar = () => {
 						Login
 					</button>
 				</div>
-				
 			</div>
 		</div>
 	);

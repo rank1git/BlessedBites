@@ -8,21 +8,28 @@ import CuratedCollections from '../components/CuratedCollections';
 import LatestRecipes from '../components/LatestRecipes';
 import Inbox from '../components/Inbox';
 import Footer from '../components/Footer';
+import { useSelector } from 'react-redux';
 
 
 const HomePage = () => {
+	const { data } = useSelector(state => state.recipes);
+	
 	return (
 		<div className=''>
 			<TopBar />
 			<img src='./blessed-bites-high-resolution-logo-transparent.png' alt='logo' className='h-24 justify-self-center mt-20' />
 			<NavBar />
-			<MealSlider />
-			<PopularCategories />
-			<SuperDelicious />
-			<CuratedCollections />
-			<LatestRecipes />
+			{data.recipes && (
+				<>
+					<MealSlider />
+					<PopularCategories />
+					<SuperDelicious />
+					<CuratedCollections />
+					<LatestRecipes />
+				</>
+			)}
 			<Inbox />
-			<Footer />
+			<Footer endpoint={'recipes?limit=0'} />
 		</div>
 	);
 };

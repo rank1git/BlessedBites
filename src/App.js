@@ -1,24 +1,13 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Recipes from './recipes';
 
 const App = () => {
-	const [apiData, setApiData] = useState(null);
-
-	const handleDataFromChild = (data) => {
-		setApiData(data)
-		console.log(apiData?.recipes)
-	}
-	console.log(apiData?.recipes)
+	const {data} = useSelector(state => state.recipes);
+	console.log(data.recipes)
 	return (
-		<div>
-			<Recipes endpoint={'recipes?limit=0'} type={'image'} onDataFetched={handleDataFromChild} />
-			<ul>
-				{apiData?.recipes.map(item => 
-					<li key={item.id}>{item.name} {item.id}<img src={item.image} alt='food' /></li>
-				)}
-			</ul>
-		</div>
-	);
+		<Recipes endpoint={'recipes?limit=0'} />
+	)
 };
 
 export default App;
