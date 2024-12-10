@@ -21,7 +21,7 @@ const TopBar2 = () => {
 	};
 
 	return (
-		<div className="flex flex-row w-full py-4 fixed top-0 z-50 bg-white space-between items-center">
+		<div className="flex flex-row w-full py-4 fixed top-0 z-50 bg-white space-between items-center shadow">
 			<div className='flex flex-1 justify-center'>
         <NavLink to='/'><img src='./blessed-bites-high-resolution-logo-transparent.png' alt='logo' className='h-8' /></NavLink>
       </div>

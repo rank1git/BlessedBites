@@ -11,6 +11,11 @@ const Footer = ({endpoint}) => {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector(state => state.recipes);
 
+  const set = new Set();
+  data.recipes && data.recipes.map(recipe => {
+    return recipe.tags.map(tag => set.add(tag))
+  })
+  
   useEffect(() => {
     dispatch(fetchData(endpoint));
   }, [dispatch])
@@ -26,25 +31,25 @@ const Footer = ({endpoint}) => {
           </div>
           <div className='links flex flex-row items-center h-full gap-6'>
             <div className='flex flex-col gap-2'>
-            <strong>Blessed Bites</strong>
-              <NavLink to='/about' className='font-light'>About us</NavLink>
-              <NavLink to='/careers' className='font-light'>Careers</NavLink>
-              <NavLink to='/contact' className='font-light'>Contact us</NavLink>
-              <NavLink to='/feedback' className='font-light'>Feedback</NavLink>
+              <strong>Blessed Bites</strong>
+              <NavLink to='/about' className='font-light hover:underline'>About us</NavLink>
+              <NavLink to='/careers' className='font-light hover:underline'>Careers</NavLink>
+              <NavLink to='/contact' className='font-light hover:underline'>Contact us</NavLink>
+              <NavLink to='/feedback' className='font-light hover:underline'>Feedback</NavLink>
             </div>
             <div className='flex flex-col gap-2'>
-            <strong>Legal</strong>
-              <NavLink to='/terms-and-conditions' className='font-light'>Terms</NavLink>
-              <NavLink to='/terms-and-conditions' className='font-light'>Conditions</NavLink>
-              <NavLink to='/cookies' className='font-light'>Cookies</NavLink>
-              <NavLink to='/copyright' className='font-light'>Copyright</NavLink>
+              <strong>Legal</strong>
+              <NavLink to='/terms-and-conditions' className='font-light hover:underline'>Terms</NavLink>
+              <NavLink to='/terms-and-conditions' className='font-light hover:underline'>Conditions</NavLink>
+              <NavLink to='/cookies' className='font-light hover:underline'>Cookies</NavLink>
+              <NavLink to='/copyright' className='font-light hover:underline'>Copyright</NavLink>
             </div>
             <div className='flex flex-col gap-2'>
               <strong>Follow</strong>
-              <a href='https://facebook.com' className='font-light'>Facebook</a>
-              <a href='https://twitter.com' className='font-light'>Twitter</a>
-              <a href='https://instagram.com' className='font-light'>Instagram</a>
-              <a href='https://youtube.com' className='font-light'>YouTube</a>
+              <a href='https://facebook.com' className='font-light hover:underline'>Facebook</a>
+              <a href='https://twitter.com' className='font-light hover:underline'>Twitter</a>
+              <a href='https://instagram.com' className='font-light hover:underline'>Instagram</a>
+              <a href='https://youtube.com' className='font-light hover:underline'>YouTube</a>
             </div>
           </div>
         </div>

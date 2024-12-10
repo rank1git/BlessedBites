@@ -5,7 +5,7 @@ const SuperDelicious = () => {
   const { data } = useSelector(state => state.recipes);
   
   return (
-    <div className='mt-20'>
+    <div>
       <h1 className='text-4xl font-bold font-serif ml-5'>Super Delicious</h1>
       {data.recipes && (
         <div className='mt-10'>

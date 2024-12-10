@@ -6,12 +6,17 @@ import x from '../img/twitter.svg';
 import ig from '../img/instagram.svg';
 import yt from '../img/youtube.svg';
 import search from '../img/search.svg';
+import Search from './Search';
 
 const TopBar = () => {
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [query, setQuery] = useState('');
 
 	const handleSearchClick = () => {
+		if(isExpanded && query.length > 0) {
+			console.log(query)
+			setQuery('');
+		}
 		setIsExpanded(!isExpanded);
 	};
 
@@ -28,45 +33,33 @@ const TopBar = () => {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<img src={fb} alt="Facebook" className="w-8 opacity-70 transition-shadow hover:shadow-2xl" />
+						<img src={fb} alt="Facebook" className="w-8 opacity-70 hover:border-transparent hover:border-2 hover:rounded" />
 					</a>
 					<a
 						href="https://www.twitter.com"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<img src={x} alt="Twitter" className="w-8 opacity-70 hover:border-black hover:border-2 hover:rounded" />
+						<img src={x} alt="Twitter" className="w-8 opacity-70 hover:border-transparent hover:border-2 hover:rounded" />
 					</a>
 					<a
 						href="https://www.instagram.com"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<img src={ig} alt="Instagram" className="w-8 opacity-70 hover:border-black hover:border-2 hover:rounded" />
+						<img src={ig} alt="Instagram" className="w-8 opacity-70 hover:border-transparent hover:border-2 hover:rounded" />
 					</a>
 					<a
               href="https://www.youtube.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={yt} alt='YouTube' className='w-8 opacity-70 hover:border-black hover:border-2 hover:rounded'/>
+              <img src={yt} alt='YouTube' className='w-8 opacity-70 hover:border-transparent hover:border-2 hover:rounded'/>
             </a>
 				</div>
 				<div className='flex flex-row justify-between w-1/3'>
-					<button onClick={handleSearchClick} className="search-icon">
-						<img src={search} alt="searchbar" className="w- ml-10" />
-					</button>
-					<input
-						type="text"
-						className={`transition-width duration-300 ease-in-out border border-gray-300 rounded-lg outline-none ${
-							isExpanded ? 'w-48 pl-2 opacity-100' : 'w-0 p-0 opacity-0'
-						}`}
-						placeholder="Search..."
-						value={query}
-						onChange={handleInputChange}
-						autoFocus={isExpanded}
-					/>
-					<button className='bg-transparent border-2 border-black rounded ml-10 px-8 hover:bg-gray-300' >
+					<Search />
+					<button className='flex bg-transparent border-2 border-black rounded ml-10 px-8 hover:bg-gray-300 flex-shrink-0 w-24 justify-center' >
 						Login
 					</button>
 				</div>

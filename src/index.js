@@ -23,102 +23,259 @@ import AllRecipes from './pages/AllRecipes';
 import Profile from './pages/Profile.js'
 import { store } from './app/store.js';
 import {Provider} from 'react-redux';
+import Categories from './pages/Categories.js';
+import { Car, Pizza } from 'lucide-react';
+import Salad from './pages/Salad.js';
+import Vegetarian from './pages/Vegetarian.js';
+import Italian from './pages/Italian.js';
+import Smoothies from './pages/Smoothies.js';
+import Chicken from './pages/Chicken.js';
+import Pasta from './pages/Pasta.js';
+import Pakistani from './pages/Pakistani.js';
+import ScrollToTop from './components/ScrollToTop.js';
+import Layout from './components/Layout.js';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <HomePage />,
+		element: (
+			<Layout>
+				<HomePage />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/breakfast',
-		element: <Breakfast />,
+		element: (
+			<Layout>
+				<Breakfast />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/lunch',
-		element: <Lunch />,
+		element: (
+			<Layout>
+				<Lunch />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/dinner',
-		element: <Dinner />,
+		element: (
+			<Layout>
+				<Dinner />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/dessert',
-		element: <Dessert />,
+		element: (
+			<Layout>
+				<Dessert />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/drinks',
-		element: <Drinks />,
+		element: (
+			<Layout>
+				<Drinks />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/sides',
-		element: <Sides />,
+		element: (
+			<Layout>
+				<Sides />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/snacks-apps',
-		element: <SnacksApps />,
+		element: (
+			<Layout>
+				<SnacksApps />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/terms-and-conditions',
-		element: <TermsAndConditons />,
+		element: (
+			<Layout>
+				<TermsAndConditons />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/about',
-		element: <About />,
+		element: (
+			<Layout>
+				<About />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/careers',
-		element: <Careers />,
+		element: (
+			<Layout>
+				<Careers />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/contact',
-		element: <Contact />,
+		element: (
+			<Layout>
+				<Contact />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/feedback',
-		element: <Feedback />,
+		element: (
+			<Layout>
+				<Feedback />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/cookies',
-		element: <Cookies />,
+		element: (
+			<Layout>
+				<Cookies />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/copyright',
-		element: <Copyright />,
+		element: (
+			<Layout>
+				<Copyright />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/allrecipes',
-		element: <AllRecipes />,
+		element: (
+			<Layout>
+				<AllRecipes />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 	{
 		path: '/profile-photo',
-		element: <Profile />,
+		element: (
+			<Layout>
+				<Profile />
+			</Layout>
+		),
+		errorElement: <NotFoundPage />,
+	},
+	{
+		path: '/categories',
+		element: (
+			<Layout>
+				<Categories />
+			</Layout>
+		),
+		errorElement: <NotFoundPage />,
+	},
+	{
+		path: '/pizza',
+		element: (
+			<Layout>
+				<Pizza />
+			</Layout>
+		),
+		errorElement: <NotFoundPage />,
+	},
+	{
+		path: '/pakistani',
+		element: (
+			<Layout>
+				<Pakistani />
+			</Layout>
+		),
+		errorElement: <NotFoundPage />,
+	},
+	{
+		path: '/pasta',
+		element: (
+			<Layout>
+				<Pasta />
+			</Layout>
+		),
+		errorElement: <NotFoundPage />,
+	},
+	{
+		path: '/chicken',
+		element: (
+			<Layout>
+				<Chicken />
+			</Layout>
+		),
+		errorElement: <NotFoundPage />,
+	},
+	{
+		path: '/smoothies',
+		element: (
+			<Layout>
+				<Smoothies />
+			</Layout>
+		),
+		errorElement: <NotFoundPage />,
+	},
+	{
+		path: '/italian',
+		element: (
+			<Layout>
+				<Italian />
+			</Layout>
+		),
+		errorElement: <NotFoundPage />,
+	},
+	{
+		path: '/vegetarian',
+		element: (
+			<Layout>
+				<Vegetarian />
+			</Layout>
+		),
+		errorElement: <NotFoundPage />,
+	},
+	{
+		path: '/salad',
+		element: (
+			<Layout>
+				<Salad />
+			</Layout>
+		),
 		errorElement: <NotFoundPage />,
 	},
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	// <React.StrictMode>
 	<Provider store={store}>
 		<RouterProvider router={router} />
 		{/* <App /> */}
 	</Provider>
-	
-	// </React.StrictMode>
 );

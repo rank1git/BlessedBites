@@ -22,8 +22,12 @@ const HomePage = () => {
 			{data.recipes && (
 				<>
 					<MealSlider />
-					<PopularCategories />
-					<SuperDelicious />
+					<div className='mb-20'>
+						<PopularCategories />
+					</div>
+					<div className='mb-20'>
+						<SuperDelicious />
+					</div>
 					<CuratedCollections />
 					<LatestRecipes />
 				</>
