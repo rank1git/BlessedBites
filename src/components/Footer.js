@@ -26,7 +26,7 @@ const Footer = ({endpoint}) => {
       <div className='footer flex flex-col'>
         <div className='tophalf flex flex-row w-full justify-between px-10 h-64'> 
           <div className='logowords mt-5 content-center'>
-            <div><img src='./blessed-bites-high-resolution-logo-transparent.png' alt='logo' className='h-10 mb-2 justify-self-center' /></div>
+            <div><img src='/blessed-bites-high-resolution-logo-transparent.png' alt='logo' className='h-10 mb-2 justify-self-center' /></div>
             <p className='font-serif'>"Feeding the Soul, One Recipe at a Time."</p>
           </div>
           <div className='links flex flex-row items-center h-full gap-6'>

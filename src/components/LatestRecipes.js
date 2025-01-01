@@ -14,6 +14,7 @@ const LatestRecipes = () => {
       setEndIndex(endIndex + 8);
     } 
   }
+  console.log(data.recipes)
   
   return (
     <div className='mt-20'>

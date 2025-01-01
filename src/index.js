@@ -34,6 +34,7 @@ import Pasta from './pages/Pasta.js';
 import Pakistani from './pages/Pakistani.js';
 import ScrollToTop from './components/ScrollToTop.js';
 import Layout from './components/Layout.js';
+import RecipeTemplate from './components/RecipeTemplate.js';
 
 const router = createBrowserRouter([
 	{
@@ -176,6 +177,16 @@ const router = createBrowserRouter([
 		element: (
 			<Layout>
 				<AllRecipes />
+			</Layout>
+		),
+		errorElement: <NotFoundPage />,
+	},
+
+	{
+		path: '/allrecipes/:currRecipe',
+		element: (
+			<Layout>
+				<RecipeTemplate />
 			</Layout>
 		),
 		errorElement: <NotFoundPage />,

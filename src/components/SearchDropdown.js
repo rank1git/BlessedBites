@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const SearchDropdown = ({filteredItems}) => {
   return (
@@ -7,7 +8,8 @@ const SearchDropdown = ({filteredItems}) => {
         <ul>
           {filteredItems.map(item => (
             <li key={item.id} className="p-2 border-b hover:bg-gray-200 cursor-pointer">
-              {item}
+              {/* <NavLink to={item.toLowerCase().replaceAll(' ', '-')}>{item}</NavLink> */}
+              {item.toLowerCase().replaceAll(' ', '-')}
             </li>
           ))}
         </ul>

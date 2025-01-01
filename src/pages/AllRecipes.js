@@ -2,6 +2,7 @@ import React,  {useState} from 'react';
 import Footer from '../components/Footer';
 import TopBar2 from '../components/TopBar2';
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const AllRecipes = () => {
   const [endIndex, setEndIndex] = useState(20);
@@ -27,7 +28,12 @@ const AllRecipes = () => {
           <div>
             <ul className='flex flex-wrap w-full gap-4 px-4'>
               {data.recipes.slice(0, endIndex).map((recipe) => 
-                <li key={recipe.id} className='flex-1 min-w-[20%] max-w-[24%]'><img className='rounded-xl' src={recipe.image} alt={recipe.name} />{recipe.name} | {recipe.cuisine}</li>
+                <li key={recipe.id} className='flex-1 min-w-[20%] max-w-[24%]'>
+                  <NavLink to={recipe.name.toLowerCase().replaceAll(' ', '-')}>
+                    <img className='rounded-xl' src={recipe.image} alt={recipe.name} />
+                  </NavLink>
+                  {recipe.name} | {recipe.cuisine}
+                </li>
               )}
             </ul>
             {showMore && <button className='flex border-2 border-black px-2 py-1 hover:bg-gray-300 justify-self-center mt-6' onClick={handleMoreRecipes}>Load More Recipes</button>}

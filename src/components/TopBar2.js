@@ -23,7 +23,7 @@ const TopBar2 = () => {
 	return (
 		<div className="flex flex-row w-full py-4 fixed top-0 z-50 bg-white space-between items-center shadow">
 			<div className='flex flex-1 justify-center'>
-        <NavLink to='/'><img src='./blessed-bites-high-resolution-logo-transparent.png' alt='logo' className='h-8' /></NavLink>
+        <NavLink to='/'><img src='/blessed-bites-high-resolution-logo-transparent.png' alt='logo' className='h-8' /></NavLink>
       </div>
       <nav className="flex flex-2 gap-5 h-full justify-center ">
         <Dropdown 
@@ -51,7 +51,7 @@ const TopBar2 = () => {
 					autoFocus={isExpanded}
 				/>
 				<NavLink to='/profile-page' >
-					<img className='w-8 rounded-full' src='./blankprofile.png' alt='profile pic'/>
+					<img className='w-8 rounded-full' src='/blankprofile.png' alt='profile pic'/>
 				</NavLink>
 			</div>
 		</div>
